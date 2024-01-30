@@ -44,6 +44,12 @@ INSTALLED_APPS = [
     'orders'
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ]
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -84,8 +90,8 @@ DATABASES = {
         'NAME': 'django',
         'USER': 'postgres',
         'PASSWORD': '123456',
-        #'HOST': 'localhost',
-        'HOST': 'db_postgres',
+        'HOST': '127.0.0.1',
+        #'HOST': 'db_postgres',
         'PORT': '5432',
     },
     'sqlite': {
